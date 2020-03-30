@@ -90,6 +90,7 @@ func (r *Manager) build(event fsnotify.Event) {
 			args = append(args, r.BuildFlags...)
 			args = append(args, "-o", r.FullBuildPath(), r.BuildTargetPath)
 			cmd := exec.CommandContext(r.context, "go", args...)
+			cmd.Dir = r.AppRoot
 
 			err := r.runAndListen(cmd)
 			if err != nil {
