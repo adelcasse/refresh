@@ -1,4 +1,4 @@
-module github.com/markbates/refresh
+module github.com/adelcasse/refresh
 
 go 1.13
 
